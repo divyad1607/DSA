@@ -1,26 +1,26 @@
 import java.util.LinkedList;
 
 class LL {
-    Node head; 
+    Node head;
     private int size;
 
-    LL(){
+    LL() {
         this.size = 0;
     }
 
-    class Node{
+    class Node {
         String data;
         Node next;
 
-        Node(String data){
+        Node(String data) {
             this.data = data;
             this.next = null;
             size++;
         }
     }
 
-    //Add - first,last
-    public void addFirst(String data){
+    // Add - first,last
+    public void addFirst(String data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -30,7 +30,7 @@ class LL {
         head = newNode;
     }
 
-    public void addLast(String data){
+    public void addLast(String data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -38,38 +38,38 @@ class LL {
         }
 
         Node currNode = head;
-        while (currNode.next!=null) {
+        while (currNode.next != null) {
             currNode = currNode.next;
         }
-        currNode.next=newNode;
+        currNode.next = newNode;
     }
 
-    //print
-    public void print(){
+    // print
+    public void print() {
         if (head == null) {
             System.out.print("list is empty");
             return;
         }
         Node currNode = head;
-        while (currNode!=null) {
-            System.out.print(currNode.data +" -> ");
-            currNode = currNode.next; 
+        while (currNode != null) {
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
         }
         System.out.print("NULL");
-        System.out.println(); 
+        System.out.println();
     }
 
-    //Delete
-    public void deleteFirst(){
-        if(head == null){
+    // Delete
+    public void deleteFirst() {
+        if (head == null) {
             System.out.print("This list is empty");
             return;
         }
         size--;
         head = head.next;
     }
-    
-    public void deleteLast(){
+
+    public void deleteLast() {
         if (head == null) {
             System.out.print("This list is empty");
             return;
@@ -82,18 +82,19 @@ class LL {
 
         Node SecondLast = head;
         Node lastNode = head.next;
-        while (lastNode.next!=null) {
+        while (lastNode.next != null) {
             lastNode = lastNode.next;
             SecondLast = SecondLast.next;
         }
         SecondLast.next = null;
     }
-    //Size
-    public int getSize(){
+
+    // Size
+    public int getSize() {
         return size;
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         LL list = new LL();
         list.addFirst("a");
         list.addLast("is");
@@ -121,5 +122,5 @@ class LL {
 
         list.print();
     }
-    
+
 }
